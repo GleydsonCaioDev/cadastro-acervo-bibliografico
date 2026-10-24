@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros</title>
+</head>
+<body>
+        <header>
+            <h1>Sistema de Cadastro de Livros</h1>
+            <p>Formulário de Cadastro de Livros</p>
+        </header>
+    <main>
+        <section>
+            <h2>Cadastrar Livro</h2>
+            <form action="/salvar-livro" method="POST">
+                <fieldset>
+                    <legend>Informações da Obra</legend>
+
+                    <p>
+                        <label for="titulo">Título do Livro:</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                    </p>
+                    <p>
+                        <label for="autores">Autor(es):</label>
+                        <input type="text" id="autores" name="autores" required>
+                    </p>
+                    <p>
+                        <label for="isbn">ISBN:</label>
+                        <input type="text" id="isbn" name="isbn" pattern="\d{13}" minlength="13" maxlength="13" placeholder="Digite 13 dígitos" required>
+                    </p>
+                    <p>
+                        <label for="publicacao">Ano de Publicação</label>
+                        <input type="number" id="publicacao" name="publicacao" placeholder="EX: 2023" required>
+                    </p>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalhes Acadêmicos</legend>
+
+                    <p>
+                        <label for="curso-alvo">Curso Alvo:</label>
+                        <select id="curso-alvo" name="curso-alvo" required>
+                            <option value="" selected disabled>Selecione um Curso...</option>
+                            <option value="engenharia-software">Engenharia de Software</option>
+                            <option value="ads">Análise e Desenv. de Sistemas</option>
+                            <option value="tronco-comum">Tronco Comum</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="disciplina">Disciplina:</label>
+                        <input type="text" id="disciplina" name="disciplina" required>
+                    </p>
+
+                    <p>Formato do Material</p>
+
+                    <p>
+                        <input type="radio" id="fisico" name="formato" value="fisico" required>
+                        <label for="fisico">Físico</label>
+        
+                        <input type="radio" id="digital" name="formato" value="digital" required>
+                        <label for="digital">Digital</label>
+    
+                        <input type="radio" id="hibrido" name="formato" value="hibrido" required>
+                        <label for="hibrido">Híbrido</label>
+                    </p>
+
+                </fieldset>
+
+                <button type="submit">Salvar Livro</button>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>
